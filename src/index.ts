@@ -1,5 +1,5 @@
 let dimensionArreglo: number = Number(
-  prompt("Ingrese la cantidad de celdas deseadas")
+  prompt("Ingrese la cantidad de posiciones ")
 );
 let indice: number;
 let arrayAños: number[] = new Array(dimensionArreglo);
@@ -11,14 +11,13 @@ let nombre: string;
 let numPosicion: number;
 let i: number;
 let j: number;
-let k: number;
 
 for (numPosicion = 0; numPosicion < dimensionArreglo; numPosicion++) {
   nombre = String(prompt(" Nombre " + (numPosicion + 1)));
   edad = Number(prompt(" Edad " + (numPosicion + 1)));
   altura = Number(prompt(" Altura " + (numPosicion + 1)));
   i = 0;
-  while (i < numPosicion && arrayAños[i] < edad) {
+  while (i < numPosicion && arrayAños[i] <= edad && arrayAltura[i] < altura) {
     i++;
   }
   for (j = numPosicion; j > i; j--) {
@@ -32,17 +31,14 @@ for (numPosicion = 0; numPosicion < dimensionArreglo; numPosicion++) {
 }
 
 for (indice = 0; indice < dimensionArreglo; indice++) {
-  console.log("El año en la posición ", indice + 1, " es ", arrayAños[indice]);
   console.log(
-    "La altura ingresada en la posición ",
+    "Posición",
     indice + 1,
-    " es ",
+    ": Nombre -",
+    arrayNombres[indice],
+    " Edad -",
+    arrayAños[indice],
+    " Altura -",
     arrayAltura[indice]
-  );
-  console.log(
-    "El nombre ingresado en la posición ",
-    indice + 1,
-    " es ",
-    arrayNombres[indice]
   );
 }
