@@ -18,6 +18,7 @@ for (numPosicion = 0; numPosicion < dimensionArreglo; numPosicion++) {
   altura = Number(prompt(" Altura " + (numPosicion + 1)));
   i = 0;
   while (i < numPosicion && arrayAños[i] <= edad && arrayAltura[i] < altura) {
+    //error
     i++;
   }
   for (j = numPosicion; j > i; j--) {
